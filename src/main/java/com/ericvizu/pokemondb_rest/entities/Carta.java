@@ -13,9 +13,10 @@ public class Carta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    //TODO "numero" não pode ser um Integer, visto que na maioria dos casos vai ter o caractere especial "/"
     private String nome;                                    // Nome da carta. Exemplo: Hydrapple EX
     private Integer numero;                                 // Número da carta. Exemplo: 167/142
-    private Integer quantidade;                             // Quantas cartas. Exemplo: 1
+    // private Integer quantidade;                             // Quantas cartas. Exemplo: 1
     private String raridade;                                // Raridade. Exemplo: Ilustração Rara Especial
     private String colecao;                                 // Coleção. Exemplo: SCR
     private String tipo;                                    // Tipo. Exemplo: Pokémon
@@ -25,10 +26,13 @@ public class Carta {
     private String regulamento;                             // Letra de regulamento. Exemplo: H
     private String idioma;                                  // Idioma da carta. Exemplo PT
 
-    public Carta(CartaDTO CartaDTO){
+    public Carta() {
+    }
+
+    public Carta(CartaDTO CartaDTO) {
         this.nome = CartaDTO.nome();
         this.numero = CartaDTO.numero();
-        this.quantidade = CartaDTO.quantidade();
+        // this.quantidade = CartaDTO.quantidade();
         this.raridade = CartaDTO.raridade();
         this.colecao = CartaDTO.colecao();
         this.tipo = CartaDTO.tipo();
@@ -37,6 +41,14 @@ public class Carta {
         this.ano = CartaDTO.ano();
         this.regulamento = CartaDTO.regulamento();
         this.idioma = CartaDTO.idioma();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getHolo() {
@@ -63,13 +75,13 @@ public class Carta {
         this.numero = numero;
     }
 
-    public Integer getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(Integer quantidade) {
-        this.quantidade = quantidade;
-    }
+//    public Integer getQuantidade() {
+//        return quantidade;
+//    }
+//
+//    public void setQuantidade(Integer quantidade) {
+//        this.quantidade = quantidade;
+//    }
 
     public String getRaridade() {
         return raridade;
@@ -131,11 +143,11 @@ public class Carta {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Carta carta = (Carta) o;
-        return Objects.equals(getNumero(), carta.getNumero()) && Objects.equals(getHolo(), carta.getHolo()) && Objects.equals(getAno(), carta.getAno()) && Objects.equals(getIdioma(), carta.getIdioma());
+        return Objects.equals(getId(), carta.getId());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getNumero(), getHolo(), getAno(), getIdioma());
+        return Objects.hashCode(getId());
     }
 }
