@@ -9,21 +9,22 @@ import java.util.Objects;
 @Table(name = "tb_inventario")
 public class Inventario {
 
-    //TODO Criar o resto de Inventario
+    //TODO Corrigir as referências (ex. DTO)
+    //TODO Criar o resto de Inventario (DTO, Resource, Service, DevConfig)
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String usuario;                                    // Nome da carta. Exemplo: Hydrapple EX
-    private Integer quantidade;                             // Quantas cartas. Exemplo: 1
+    private String usuario;             // Qual usuario ao qual essa carta pertence. Exemplo: ericvizu
+    private Integer quantidade;         // Quantas cartas. Exemplo: 1
 
     public Inventario() {
     }
 
-    public Inventario(CartaDTO CartaDTO) {
-        this.quantidade = CartaDTO.quantidade();
-    }
+//    public Inventario(CartaDTO CartaDTO) {
+//        this.quantidade = CartaDTO.quantidade();
+//    }
 
     public Long getId() {
         return id;
@@ -31,6 +32,14 @@ public class Inventario {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public Integer getQuantidade() {

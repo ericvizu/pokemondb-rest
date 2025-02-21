@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class PokemondbRestApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(PokemondbRestApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(PokemondbRestApplication.class, args);
+    }
 
 }
 

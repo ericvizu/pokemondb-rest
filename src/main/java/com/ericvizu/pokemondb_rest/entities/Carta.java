@@ -13,10 +13,9 @@ public class Carta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //TODO "numero" não pode ser um Integer, visto que na maioria dos casos vai ter o caractere especial "/"
+    //"numero" não pode ser um Integer, visto que geralmente vai ter o caractere especial "/"
     private String nome;                                    // Nome da carta. Exemplo: Hydrapple EX
-    private Integer numero;                                 // Número da carta. Exemplo: 167/142
-    // private Integer quantidade;                             // Quantas cartas. Exemplo: 1
+    private String numero;                                  // Número da carta. Exemplo: 167/142
     private String raridade;                                // Raridade. Exemplo: Ilustração Rara Especial
     private String colecao;                                 // Coleção. Exemplo: SCR
     private String tipo;                                    // Tipo. Exemplo: Pokémon
@@ -32,7 +31,6 @@ public class Carta {
     public Carta(CartaDTO CartaDTO) {
         this.nome = CartaDTO.nome();
         this.numero = CartaDTO.numero();
-        // this.quantidade = CartaDTO.quantidade();
         this.raridade = CartaDTO.raridade();
         this.colecao = CartaDTO.colecao();
         this.tipo = CartaDTO.tipo();
@@ -67,21 +65,13 @@ public class Carta {
         this.nome = nome;
     }
 
-    public Integer getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(Integer numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
-
-//    public Integer getQuantidade() {
-//        return quantidade;
-//    }
-//
-//    public void setQuantidade(Integer quantidade) {
-//        this.quantidade = quantidade;
-//    }
 
     public String getRaridade() {
         return raridade;
