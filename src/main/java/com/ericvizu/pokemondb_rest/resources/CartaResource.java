@@ -27,13 +27,13 @@ public class CartaResource {
         return ResponseEntity.created(uri).body(newObj);
     }
 
-    @GetMapping(value="/{id}")
+    @GetMapping(value = "/{id}")
     public ResponseEntity<Carta> read(@PathVariable Long id) {
         Carta entity = service.read(id);
         return ResponseEntity.ok().body(entity);
     }
 
-    @PutMapping(value="/{id}")
+    @PutMapping(value = "/{id}")
     public ResponseEntity<Carta> update(@PathVariable Long id, @RequestBody CartaDTO obj) {
         Carta entity = service.update(id, obj);
         return ResponseEntity.ok().body(entity);

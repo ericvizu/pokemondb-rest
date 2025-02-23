@@ -12,6 +12,10 @@ public class PokemondbRestApplication {
 
 }
 
+//TODO Roteiro
+// 2 - Implementação Inventário
+
+
 //TODO A estrutura vai ter que ser da seguinte forma:
 //	Banco de dados com todas as cartas (tb_cartas)
 //	Banco de dados com o inventário unificado de todos usuários (tb_inventario)
