@@ -25,6 +25,8 @@ public class Carta {
     private String regulamento;                             // Letra de regulamento. Exemplo: H
     private String idioma;                                  // Idioma da carta. Exemplo PT
 
+
+    //Não pode ter MapsByID, pois posso ter a mesma carta para usuários diferentes na tb_inventario
     public Carta() {
     }
 

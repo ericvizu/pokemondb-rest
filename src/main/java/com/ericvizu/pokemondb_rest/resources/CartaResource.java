@@ -15,7 +15,6 @@ import java.util.List;
 @CrossOrigin("http://localhost:3000")
 @RequestMapping(value = "/carta")
 public class CartaResource {
-    //TODO Tratamento de exceção
 
     @Autowired
     private CartaService service;

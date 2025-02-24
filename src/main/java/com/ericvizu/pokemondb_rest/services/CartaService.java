@@ -37,7 +37,7 @@ public class CartaService {
         Carta carta = new Carta(obj);
         for (Carta c : findAll()) {
             if ((Objects.equals(carta.getNome(), c.getNome())) && (Objects.equals(carta.getHolo(), c.getHolo())) && (Objects.equals(carta.getAno(), c.getAno())) && (Objects.equals(carta.getIdioma(), c.getIdioma()))) {
-                throw new ItemDuplicadoException(("Carta com o mesmo nome já encontrada"));
+                throw new ItemDuplicadoException(("Esta carta já se encontra cadastrada"));
             }
         }
         // Aqui vai entrar o quantidadeInicial da CartaDTO
@@ -47,9 +47,9 @@ public class CartaService {
     public Carta read(Long id) {
         try {
             Optional<Carta> obj = repository.findById(id);
-            return obj.orElseThrow(() -> new RuntimeException("Missing resource with id" + id));
+            return obj.orElseThrow(() -> new RuntimeException("Não foi possível encontrar item com ID " + id + "."));
         } catch (IllegalArgumentException e) {
-            throw new RuntimeException("Missing id number");
+            throw new RuntimeException("Não foi informado o ID.");
         }
     }
 
@@ -63,6 +63,7 @@ public class CartaService {
         }
     }
 
+    //TODO SE quantidade não for nula, ENTÃO não pod e deletar
     public void delete(Long id) {
         try {
             if (!repository.existsById(id)) {
@@ -70,7 +71,7 @@ public class CartaService {
             }
             repository.deleteById(id);
         } catch (IllegalArgumentException e) {
-            throw new RuntimeException("Missing id number.");
+            throw new RuntimeException("Não foi informado o ID.");
         } catch (EntityNotFoundException e) {
             throw new RecursoNaoEncontradoException(id);
         } catch (DataIntegrityViolationException e) {
