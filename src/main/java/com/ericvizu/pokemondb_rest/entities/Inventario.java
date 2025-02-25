@@ -1,6 +1,5 @@
 package com.ericvizu.pokemondb_rest.entities;
 
-import com.ericvizu.pokemondb_rest.dto.CartaDTO;
 import jakarta.persistence.*;
 
 import java.util.Objects;
@@ -16,14 +15,16 @@ public class Inventario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String usuario;             // Qual usuario ao qual essa carta pertence. Exemplo: ericvizu
+    //TODO fazer associação (creio que) N:1 entre usuário e inventário
+    private String usuarioNome;             // Qual usuarioNome ao qual essa carta pertence. Exemplo: ericvizu
+
     private Integer quantidade;         // Quantas cartas. Exemplo: 1
 
     public Inventario() {
     }
 
-//    public Inventario(CartaDTO CartaDTO) {
-//        this.quantidade = CartaDTO.quantidade();
+//    public Inventario(InventarioDTO InventarioDTO) {
+//        this.quantidade = InventarioDTO.quantidade();
 //    }
 
     public Long getId() {
@@ -34,12 +35,12 @@ public class Inventario {
         this.id = id;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public String getUsuarioNome() {
+        return usuarioNome;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setUsuarioNome(String usuarioNome) {
+        this.usuarioNome = usuarioNome;
     }
 
     public Integer getQuantidade() {
