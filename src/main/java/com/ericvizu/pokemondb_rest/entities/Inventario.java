@@ -8,23 +8,16 @@ import java.util.Objects;
 @Table(name = "tb_inventario")
 public class Inventario {
 
-    //TODO Fazer tudo, vou transferir o foco para Usuários
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //TODO fazer associação (creio que) N:1 entre usuário e inventário
-    private String usuarioNome;             // Qual usuarioNome ao qual essa carta pertence. Exemplo: ericvizu
-
+    private Long usuarioNumero;
+    private Long cartaID;
     private Integer quantidade;         // Quantas cartas. Exemplo: 1
 
     public Inventario() {
     }
-
-//    public Inventario(InventarioDTO InventarioDTO) {
-//        this.quantidade = InventarioDTO.quantidade();
-//    }
 
     public Long getId() {
         return id;
@@ -34,12 +27,20 @@ public class Inventario {
         this.id = id;
     }
 
-    public String getUsuarioNome() {
-        return usuarioNome;
+    public Long getUsuarioNumero() {
+        return usuarioNumero;
     }
 
-    public void setUsuarioNome(String usuarioNome) {
-        this.usuarioNome = usuarioNome;
+    public void setUsuarioNumero(Long usuarioNumero) {
+        this.usuarioNumero = usuarioNumero;
+    }
+
+    public Long getCartaID() {
+        return cartaID;
+    }
+
+    public void setCartaID(Long cartaID) {
+        this.cartaID = cartaID;
     }
 
     public Integer getQuantidade() {
@@ -53,8 +54,8 @@ public class Inventario {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        Inventario carta = (Inventario) o;
-        return Objects.equals(getId(), carta.getId());
+        Inventario that = (Inventario) o;
+        return Objects.equals(getId(), that.getId());
     }
 
     @Override

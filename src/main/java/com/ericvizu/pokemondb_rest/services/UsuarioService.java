@@ -1,8 +1,6 @@
 package com.ericvizu.pokemondb_rest.services;
 
-import com.ericvizu.pokemondb_rest.dto.CartaDTO;
 import com.ericvizu.pokemondb_rest.dto.UsuarioDTO;
-import com.ericvizu.pokemondb_rest.entities.Carta;
 import com.ericvizu.pokemondb_rest.entities.Usuario;
 import com.ericvizu.pokemondb_rest.repositories.UsuarioRepository;
 import com.ericvizu.pokemondb_rest.services.exceptions.DatabaseException;
@@ -11,7 +9,6 @@ import com.ericvizu.pokemondb_rest.services.exceptions.RecursoNaoEncontradoExcep
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
