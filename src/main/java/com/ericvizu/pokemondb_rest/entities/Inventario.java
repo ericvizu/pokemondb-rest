@@ -8,8 +8,7 @@ import java.util.Objects;
 @Table(name = "tb_inventario")
 public class Inventario {
 
-    //TODO Corrigir as referências (ex. DTO)
-    //TODO Criar o resto de Inventario (DTO, Resource, Service, DevConfig)
+    //TODO Fazer tudo, vou transferir o foco para Usuários
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

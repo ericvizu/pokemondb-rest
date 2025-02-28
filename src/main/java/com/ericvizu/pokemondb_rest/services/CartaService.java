@@ -27,11 +27,6 @@ public class CartaService {
     // - Ano
     // - Idioma
 
-    // Pensei na possibilidade de ao adicionar uma carta que já existe o cadastro, ele adicionar 1 no parâmetro de
-    // quantidade do objeto.
-    // Porém, vou tentar pensar mais se isso é o melhor a se fazer.
-    // Pelo Excel ele iria substituir o parâmetro de quantidade.
-
     //TODO Adicionar o componente de Inventário ao create
     public Carta create(CartaDTO obj) {
         Carta carta = new Carta(obj);

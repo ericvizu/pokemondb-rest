@@ -13,8 +13,12 @@ public class PokemondbRestApplication {
 }
 
 //TODO Roteiro
-// 2 - Implementação Inventário
+// Fazer uma análise do que adicionar nos itens DTO, mas por enquanto deixar somente o necessário, ou seja,
+// somente os mesmos parâmetros da entidade em si.
+// No caso da CartaDTO, há a quantidadeInicial, vou deixar por enquanto mas não mexer muito.
 
+//TODO Autenticação
+// Fazer a autenticação quando estiver mais na parte do frontend, por enquanto não há a necessidade
 
 //TODO A estrutura vai ter que ser da seguinte forma:
 //	Banco de dados com todas as cartas (tb_cartas)

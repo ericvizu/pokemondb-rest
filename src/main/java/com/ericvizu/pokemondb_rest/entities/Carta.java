@@ -25,9 +25,6 @@ public class Carta {
     private String regulamento;                             // Letra de regulamento. Exemplo: H
     private String idioma;                                  // Idioma da carta. Exemplo PT
 
-    //TODO fazer associação (creio que) N:N entre carta, com Inventario sendo o intermediário
-
-    //Não pode ter MapsByID, pois posso ter a mesma carta para usuários diferentes na tb_inventario
     public Carta() {
     }
 
