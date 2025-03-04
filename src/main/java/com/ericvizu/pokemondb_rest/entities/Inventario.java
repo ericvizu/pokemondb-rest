@@ -12,7 +12,7 @@ public class Inventario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long usuarioNumero;
+    private Long usuarioID;
     private Long cartaID;
     private Integer quantidade;         // Quantas cartas. Exemplo: 1
 
@@ -27,12 +27,12 @@ public class Inventario {
         this.id = id;
     }
 
-    public Long getUsuarioNumero() {
-        return usuarioNumero;
+    public Long getUsuarioID() {
+        return usuarioID;
     }
 
-    public void setUsuarioNumero(Long usuarioNumero) {
-        this.usuarioNumero = usuarioNumero;
+    public void setUsuarioID(Long usuarioNumero) {
+        this.usuarioID = usuarioNumero;
     }
 
     public Long getCartaID() {
